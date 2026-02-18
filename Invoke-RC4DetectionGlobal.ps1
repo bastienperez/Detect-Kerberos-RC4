@@ -212,11 +212,11 @@ if ($kerbUsage) {
 
 Write-Host ''
 if (($accountKeys | Where-Object { $_.Keys -match 'RC4' }).Count -gt 0 -or ($kerbUsage | Where-Object { $_.Ticket -eq 'RC4' -or $_.SessionKey -eq 'RC4' }).Count -gt 0) {
-    Write-Host '⚠️  ALERT: RC4 usage detected in your environment!' -ForegroundColor Red
+    Write-Host 'ALERT: RC4 usage detected in your environment!' -ForegroundColor Red
     Write-Host '   Recommendation: Plan migration to AES' -ForegroundColor Yellow
 }
 else {
-    Write-Host '✅ No RC4 usage detected - Environment is secure' -ForegroundColor Green
+    Write-Host 'No RC4 usage detected - Environment is secure' -ForegroundColor Green
 }
 
 Write-Host ''
